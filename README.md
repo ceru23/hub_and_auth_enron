@@ -1,7 +1,7 @@
 ## Hubs and Authorities at Enron
-#### Proposed Solution
 
-The task is based on the estimation of the Hubs and Authorities in the Enron social graph. The analysis is performed with the HITS algorithm applied to a corpus of employee e-mails.
+
+The task is based on the estimation of the Hubs and Authorities in the Enron social graph. The analysis is performed with the HITS algorithm applied to a corpus of employee e-mails. https://www.cs.cmu.edu/~enron/
 
 Each file contained in the e-mail dataset is a single message. When different MessageIDs are present is because they are present in forwarded e-mails. 
 A first glance on the dataset is performed looking only to the fields "From:" and "To:", creating links between a sender and multiple receivers only if they have Enron accounts (Enron accounts with partial e-mail are removed, e.g., <email yl.j@enron.com).
@@ -19,7 +19,7 @@ The "bcc:" field has a more challenging interpretation: it can be used to mask l
 
 ### HITS RESULTS
 
-The HITS algorithm implemented for this task is a weighted version of the original. The Hub and Authority formulas are changed to consider the weights of the edges as the number of excanged e-mails between sender and receiver. 
+The HITS algorithm implemented is a weighted version of the original. The Hub and Authority formulas are changed to consider the weights of the edges as the number of excanged e-mails between sender and receiver. 
 
 ![equation](https://latex.codecogs.com/gif.latex?auth%28node%29%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Br%7D%20weight%28i%2Cnode%29%20*%20hub%28i%29%20%5C%5C%20hub%28node%29%20%3D%20%5Csum_%7Bi%3D1%7D%5E%7Br%7D%20weight%28node%2Ci%29%20*%20auth%28i%29)
 
@@ -45,7 +45,7 @@ In the next tables result are reported for top-5 hubs and authority with and wit
 | l..denton@enron.com      | craig.dean@enron.com     |
 | grace.rodriguez@enron.com     | leaf.harasin@enron.com      |
 
-## Find out ‘key’ words
+##  ‘key’ words
 
 The simplest way to extract disproportionately frequent words in messages between top hub and authorities could be based on the tf-idf calculated on two different sets of messages: one set is the set of messages exchanged between the top accounts, and the other its complement in the set of all messages. 
 
